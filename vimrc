@@ -1,8 +1,68 @@
-so ~/.vim/vimrc
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-syntax on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vimwiki/vimwiki'	
+	set nocompatible
+	syntax on
+
+Plugin 'tmhedberg/matchit'	"allows front-end jumping in html/latex tags (as opposed to only in brackets)
+Plugin 'Raimondi/delimitMate'	" autoclose brackets
+
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 set omnifunc=syntaxcomplete#Complete
+
+au BufNewFile,BufRead *.tw set filetype=twee
+au BufNewFile,BufRead *.twee set filetype=twee
+command! -nargs=1 Silent
+			\ | execute ':silent !'.<q-args>
+			\ | execute ':redraw!'
+
+autocmd FileType twee map <F3> :w<cr>:!twee "%:p:h" -t sugarcube > out.htm<cr>:Silent chromium-browser "%:p:h/out.htm"<cr>:Silent rm "%:p:h/out.htm"<cr>
+autocmd FileType twee map <F4> :w<cr>:!twee "%:p:h" -t sugarcube > out.htm<cr>:Silent chromium-browser "%:p:h/out.htm"<cr>:Silent rm "%:p:h/out.htm"
+"autocmd FileType twee map <F3> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>:Silent rm "%:r.htm"
+"autocmd FileType twee map <F4> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>
