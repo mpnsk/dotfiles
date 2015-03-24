@@ -1,2 +1,4 @@
 export EDITOR=vim
 PS1='\u:${c_path}\w${c_reset}$(__git_ps1 "[%s$(get_sha)]")\$ '
+PATH=$PATH:$HOME/.bin/twine
+PATH=$PATH:$HOME/.bin/qsp570_64
