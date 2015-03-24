@@ -62,7 +62,7 @@ command! -nargs=1 Silent
 			\ | execute ':silent !'.<q-args>
 			\ | execute ':redraw!'
 
-autocmd FileType twee map <F3> :w<cr>:!twee "%:p:h" -t sugarcube > out.htm<cr>:Silent chromium-browser "%:p:h/out.htm"<cr>:Silent rm "%:p:h/out.htm"<cr>
-autocmd FileType twee map <F4> :w<cr>:!twee "%:p:h" -t sugarcube > out.htm<cr>:Silent chromium-browser "%:p:h/out.htm"<cr>:Silent rm "%:p:h/out.htm"
+autocmd FileType twee map <F3> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent chromium-browser "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"<cr>
+autocmd FileType twee map <F4> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent chromium-browser "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"
 "autocmd FileType twee map <F3> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>:Silent rm "%:r.htm"
 "autocmd FileType twee map <F4> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>
