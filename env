@@ -1,4 +1,13 @@
 export EDITOR=vim
+
+isubuntu=`uname -a | grep -ic ubuntu`
+isarch=`uname -a | grep -ic arch`
+if [[ $isubuntu == 1 ]]; then
+:	#noop
+elif [[ $isarch == '1' ]]; then
+source /usr/share/git/completion/git-prompt.sh
+fi
+
 PS1='\u:${c_path}\w${c_reset}$(__git_ps1 "[%s$(get_sha)]")\$ '
 PATH=$PATH:$HOME/.bin/twine
 PATH=$PATH:$HOME/.bin/qsp570_64
