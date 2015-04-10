@@ -1,3 +1,4 @@
+set nu			"display line numbers"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -22,6 +23,12 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'tmhedberg/matchit'	"allows front-end jumping in html/latex tags (as opposed to only in brackets)
 Plugin 'Raimondi/delimitMate'	" autoclose brackets
 
+Plugin 'altercation/vim-colors-solarized'
+	set background=dark 
+" 	let g:solarized_termcolors=256
+
+Plugin 'mattn/emmet-vim'
+
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -37,6 +44,7 @@ Plugin 'Raimondi/delimitMate'	" autoclose brackets
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+	colorscheme solarized
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
