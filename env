@@ -13,3 +13,5 @@ PATH=$PATH:$HOME/.bin/twine
 PATH=$PATH:$HOME/.bin/qsp570_64
 PATH=$PATH:$HOME/.bin/scripts
 PATH=$PATH:/usr/local/apache-maven-3.3.1/bin
+
+#export PULSE_LATENCY_MSEC=60	#skypefix?
