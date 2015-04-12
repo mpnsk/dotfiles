@@ -25,7 +25,7 @@ Plugin 'Raimondi/delimitMate'	" autoclose brackets
 
 Plugin 'altercation/vim-colors-solarized'
 	set background=dark 
-" 	let g:solarized_termcolors=256
+ 	let g:solarized_termcolors=256
 
 Plugin 'mattn/emmet-vim'
 
