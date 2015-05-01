@@ -1,4 +1,7 @@
 set nu			"display line numbers"
+set hlsearch
+set ignorecase
+set smartcase
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
 Plugin 'vimwiki/vimwiki'	
 	set nocompatible
 	syntax on
@@ -27,7 +31,12 @@ Plugin 'altercation/vim-colors-solarized'
 	set background=dark 
  	let g:solarized_termcolors=256
 
-Plugin 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim' "over-the-top html tag generator
+
+
+Plugin 'bkad/CamelCaseMotion'
+
+Plugin 'gerw/vim-latex-suite'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -70,7 +79,12 @@ command! -nargs=1 Silent
 			\ | execute ':silent !'.<q-args>
 			\ | execute ':redraw!'
 
-autocmd FileType twee map <F3> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent chromium-browser "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"<cr>
-autocmd FileType twee map <F4> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent chromium-browser "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"
+autocmd FileType twee map <F3> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent firefox "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"<cr>
+autocmd FileType twee map <F4> :w<cr>:!twee "%:p:h" -t sugarcube > index.htm<cr>:Silent firefox "%:p:h/index.htm"<cr>:Silent rm "%:p:h/index.htm"
 "autocmd FileType twee map <F3> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>:Silent rm "%:r.htm"
 "autocmd FileType twee map <F4> :w<cr>:!twee "%:p" -t sugarcube > "%:r.htm"<cr>:Silent chromium-browser "%:r.htm"<cr>
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+vmap <leader>cs <esc>:'<,'>:w !suml -o out -p && xdg-open out
