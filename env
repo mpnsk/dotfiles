@@ -5,15 +5,18 @@ isarch=`uname -a | grep -ic arch`
 if [[ $isubuntu == 1 ]]; then
 :	#noop
 elif [[ $isarch == '1' ]]; then
-source /usr/share/git/completion/git-prompt.sh
+#source /usr/share/git/completion/git-prompt.sh
+source ~/.bash-git-prompt/gitprompt.sh
+  GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized
 fi
 
 #PS1='\u:${c_path}\w${c_reset}$(__git_ps1 "[%s:$(get_sha)]")\$ '
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM="auto"
+#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+#GIT_PS1_SHOWDIRTYSTATE=true
+#GIT_PS1_SHOWSTASHSTATE=true
+#GIT_PS1_SHOWUNTRACKEDFILES=true
+#GIT_PS1_SHOWUPSTREAM="auto"
 PATH=$PATH:$HOME/.bin/twine
 PATH=$PATH:$HOME/.bin/qsp570_64
 PATH=$PATH:$HOME/.bin/scripts
