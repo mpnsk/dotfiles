@@ -12,3 +12,5 @@ dump = cat-file -p
 [core]
 	autocrlf = input
 	safecrlf = true
+[credential]
+	helper = cache --timeout=3600
