@@ -1,2 +1,5 @@
 set editing-mode vi
 set keymap vi-command
+$if mode=vi
+	"\e.":yank-last-arg
+$endif
