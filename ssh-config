@@ -1,0 +1,10 @@
+#topsykrett
+Host github.com-topsykrett
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/topsykrett
+
+Host github.com-mpnsk
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/mpnsk
