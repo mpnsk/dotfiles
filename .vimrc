@@ -88,3 +88,6 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 vmap <leader>cs <esc>:'<,'>:w !suml -o out -p && xdg-open out
+
+set undofile
+set undodir=/tmp
