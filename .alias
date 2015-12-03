@@ -5,3 +5,16 @@ alias la='ls -A'
 alias l='ls -CF'
 #alias entropen='entr xdg-open /_'
 alias entrsuml='entr suml -p --scruffy --shadow -i /_ -o'
+
+function inotify {
+echo '   used  PID  owner    name'
+	for foo in /proc/*/fd/*; do readlink -f $foo; done |grep inotify |cut -d/ -f3 |xargs -I '{}' -- ps --no-headers -o '%p %U %c' -p '{}' |uniq -c |sort -nr
+}
+
+function sort-dirs-by-size {
+if [ $# != 2 ]; then 
+	echo "Incorrect number of arguments !" >&2 
+	echo "USAGE: sortdirbysize [DIRECTORY] <first n directories>" 
+fi 
+du --block-size=1M --max-depth 1 $1 | sort -rn | head -$2  
+}
