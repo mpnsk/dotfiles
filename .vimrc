@@ -91,3 +91,9 @@ vmap <leader>cs <esc>:'<,'>:w !suml -o out -p && xdg-open out
 
 set undofile
 set undodir=/tmp
+
+" for jflex syntax:
+augroup filetype 
+ au BufRead,BufNewFile *.flex,*.jflex  set filetype=jflex 
+augroup END 
+au Syntax jflex so ~/.vim/syntax/jflex.vim 
