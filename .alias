@@ -1,5 +1,6 @@
 alias mysqlcomplete='mysql --auto-rehash -u root -p'
 alias dateYmd='date +%Y.%m.%d'
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
