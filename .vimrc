@@ -36,7 +36,7 @@ Plugin 'mattn/emmet-vim' "over-the-top html tag generator
 
 Plugin 'bkad/CamelCaseMotion'
 
-Plugin 'gerw/vim-latex-suite'
+"Plugin 'gerw/vim-latex-suite'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
